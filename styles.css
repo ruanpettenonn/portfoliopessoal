@@ -1,0 +1,352 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #0d0d0d;
+    color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    animation: fadeInUp 1s ease-out;
+}
+
+.container {
+    display: flex;
+    width: 95%;
+    max-width: 1200px;
+    background: #1a1a1a;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 300px;
+    background: #1f1f1f;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.profile-picture img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    border: 4px solid #00aaff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-picture img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar-content {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.sidebar-content h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #00aaff;
+    animation: fadeInDown 1s ease-out;
+}
+
+.sidebar-content h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #999;
+    animation: fadeInDown 1.2s ease-out;
+}
+
+.sidebar-content p {
+    font-size: 1em;
+    margin-bottom: 20px;
+    animation: fadeInDown 1.4s ease-out;
+}
+
+.sidebar-content nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-content nav ul li {
+    margin: 10px 0;
+    animation: fadeInDown 1.6s ease-out;
+}
+
+.sidebar-content nav ul li a {
+    color: #00aaff;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.sidebar-content nav ul li a::before {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #00aaff;
+    transition: width 0.3s;
+}
+
+.sidebar-content nav ul li a:hover::before {
+    width: 100%;
+}
+
+.sidebar-content nav ul li a:hover {
+    color: #0088cc;
+}
+
+.contact-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.contact-item {
+    font-size: 1.5em;
+    color: #00aaff;
+    cursor: pointer;
+    position: relative;
+}
+
+.tooltip {
+    position: absolute;
+    background: #00aaff;
+    color: #1f1f1f;
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    z-index: 10;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+main {
+    flex: 1;
+    padding: 40px;
+    overflow-y: auto;
+}
+
+section {
+    margin-bottom: 60px;
+    animation: fadeInUp 1s ease-out;
+}
+
+.content h3 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #00aaff;
+    display: inline-block;
+    padding-bottom: 5px;
+    animation: fadeInUp 1s ease-out;
+}
+
+.skills-list {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    animation: fadeInUp 1.2s ease-out;
+}
+
+.skills-list li {
+    font-size: 1.2em;
+    background-color: #1e1e1e;
+    padding: 15px 25px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.skills-list li:hover {
+    background-color: #292929;
+    transform: translateY(-5px);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    animation: fadeInUp 1.2s ease-out;
+}
+
+.project {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.project img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.project h4 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #00aaff;
+}
+
+.project p {
+    font-size: 1.1em;
+    color: #ccc;
+}
+
+.project:hover {
+    transform: translateY(-10px);
+    background-color: #292929;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+a {
+    color: #00aaff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0088cc;
+    text-decoration: underline;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .sidebar {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        max-height: none;
+        border-radius: 0;
+        margin-bottom: 20px;
+    }
+
+    .profile-picture img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .sidebar-content h1 {
+        font-size: 1.5em;
+    }
+
+    .sidebar-content h2 {
+        font-size: 1em;
+    }
+
+    .sidebar-content p {
+        font-size: 0.9em;
+    }
+
+    main {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+#about2 {
+    width: 700px;
+}
+
+.projects-grid a {
+    text-decoration: none;
+}
+
+/* ----------------- */
+
+.contact-item {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.contact-item .tooltip {
+    visibility: hidden;
+    width: 150px;
+    background-color: #0088cc;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    top: 125%; /* Position below the icon */
+    left: 50%;
+    margin-left: -100px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 9px; /* Smaller font size */
+}
+
+.contact-item:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.contact-item .tooltip::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #0088cc transparent;
+}
+

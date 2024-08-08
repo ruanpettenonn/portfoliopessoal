@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio Desenvolvedor Front-End</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="profile-picture">
+                <img src="https://media.licdn.com/dms/image/v2/D4E03AQGyJ5jpZuqOmA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1722557191039?e=1728518400&v=beta&t=ksxtkEQP1tmBXi2A44fP-NfQflXUPVB8a8Dwvs15SYE" alt="Foto de Perfil">
+            </div>
+            <div class="sidebar-content">
+                <h1>Ruan Pettenon</h1>
+                <h2>Desenvolvedor Front-End</h2>
+                <p>
+                    Sou um desenvolvedor front-end júnior dedicado a criar 
+                    interfaces de usuário intuitivas, acessíveis e visualmente atraentes. 
+                    Com uma sólida base em HTML, CSS e JavaScript
+                </p>
+
+                <nav>
+                    <ul>
+                        <li><a href="#about-me">Sobre Mim</a></li>
+                        <li><a href="#skills">Habilidades</a></li>
+                        <li><a href="#projects">Projetos</a></li>
+                        <li><a href="#contact">Contato</a></li>
+                    </ul>
+                </nav>
+            </div>
+            
+            <div class="contact-icons">
+                
+                
+
+                <div class="contact-item"> 
+                    <a href="https://www.linkedin.com/in/ruanpettenonn"><i class="fab fa-linkedin"></i></a>
+                </div>
+
+                <div class="contact-item" onclick="copyEmail()">
+                    <i class="fas fa-envelope"></i>
+                    <div class="tooltip" id="emailTooltip">ruanpettenonn@outlook.com</div>
+                </div>
+
+                <div class="contact-item" data-contact="https://github.com/ruanpettenonn">
+                    <a href="https://github.com/ruanpettenonn"><i class="fab fa-github"></i></a>
+                </div>
+
+                <div class="contact-item" onclick="sendWhatsApp()">
+                    <i class="fab fa-whatsapp"></i>
+                    <div class="tooltip" id="whatsTooltip">91985472577</div>
+                </div>
+
+            </div>
+        </aside>
+        <main>
+            <section id="about-me">
+                <div class="content">
+                    <div id="about2">
+                        <h3>Sobre Mim</h3>
+                        <p>
+                            Sou um desenvolvedor front-end júnior 
+                            apaixonado por criar interfaces de 
+                            usuário dinâmicas e responsivas.
+                            Tenho experiência em HTML, CSS, JavaScript 
+                            e frameworks modernos como React.
+                            Minha jornada no desenvolvimento web começou 
+                            com projetos pessoais, onde aprendi a
+                            importância do design centrado 
+                            no usuário e da acessibilidade.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section id="skills">
+                <div class="content">
+                    <h3>Habilidades</h3>
+                    <ul class="skills-list">
+                        <li><i class="fab fa-html5"></i> HTML</li>
+                        <li><i class="fab fa-css3-alt"></i> CSS</li>
+                        <li><i class="fab fa-js"></i> JavaScript</li>
+                        <li><i class="fab fa-react"></i> React</li>
+                        <li><i class="fab fa-git-alt"></i> Git</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="projects">
+                <div class="content">
+                    <h3>Projetos</h3>
+                    <div class="projects-grid">
+                        <a href="./NOTICIA/index.html">
+                            <div class="project">
+                                <img src="./img/noticia.png" alt="Projeto 1">
+                                <h4>Notícia Cidade</h4>
+                                <p>Um síte de noticias com um layout liquido!</p>
+                            </div>
+                        </a>
+                        
+                        <a href="./RELOGIO DIGITAL/index.html">
+                            <div class="project">
+                                <img src="./img/relogio.png" alt="Projeto 2">
+                                <h4>Relogio Digital</h4>
+                                <p>Um Relógio Digital utilizando CSS e JavaScript</p>
+                            </div>
+                        </a>
+                        
+                        <a href="./LOGIN/index.html">
+                            <div class="project">
+                                <img src="./img/login.png" alt="Projeto 3">
+                                <h4>Página de Login</h4>
+                                <p>Um de Meus Primeiro Projetos, uma página de login com template bem moderno</p>
+                            </div>
+                        </a>
+
+                        <a href="./MARIO JUMP/index.html">
+                            <div class="project">
+                                <img src="./img/mario.png" alt="Projeto 4">
+                                <h4>Mario Jump</h4>
+                                <p>Um jogo bem simples utilizando o JavaScript</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        function copyEmail() {
+            const emailText = document.getElementById('emailTooltip').textContent;
+            navigator.clipboard.writeText(emailText).then(() => {
+                Swal.fire({
+                    title: 'Email Copiado!',
+                    text: emailText,
+                    icon: 'success',
+                    confirmButtonText: 'Ok'
+                });
+            }, (err) => {
+                console.error('Erro ao copiar o email: ', err);
+            });
+        }
+
+        function sendWhatsApp() {
+            const phoneNumber = "5591985472577"; 
+            const message = "Olá, gostaria de entrar em contato.";
+            const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            Swal.fire({
+                title: 'Enviar Mensagem!',
+                text: 'Você será redirecionado para o WhatsApp.',
+                icon: 'success',
+                confirmButtonText: 'Enviar Mensagem',
+                showCancelButton: true,
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.open(url, '_blank');
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
